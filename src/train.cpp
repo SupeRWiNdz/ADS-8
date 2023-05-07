@@ -39,15 +39,15 @@ int Train::getLength() {
             countOp++;
         } else {
             ptr->light = 0;
-            while (count > 0) {
+            int i = count;
+            while (i > 0) {
                 ptr = ptr->prev;
-                count--;
+                i--;
                 countOp++;
             }
             if (ptr->light == false) {
                 return count;
-            }
-            else {
+            } else {
                 count = 1;
                 countOp++;
                 ptr = ptr->next;
